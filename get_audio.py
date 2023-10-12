@@ -9,7 +9,8 @@ path = './files/audio'
 
 def getMainButtons():
 
-    buttons = [[i] for i in os.listdir(path)]
+    buttons = sorted([[i] for i in os.listdir(path)],
+                     key=lambda x: x[0].split()[2])
     # buttons.insert(0, ['🔝 Asosiy menyu'])
 
     return buttons
